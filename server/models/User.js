@@ -1,5 +1,6 @@
-const { Timestamp } = require('bson');
-const mongoose = require('mongoose');
+// const { Timestamp } = require('bson');
+import {Timestamp} from "bson"
+import mongoose from 'mongoose';
 const UserSchema = mongoose.Schema({
     username: {
         type: String,
@@ -22,4 +23,4 @@ const UserSchema = mongoose.Schema({
     },
 }, { timestamps: true });
 const User = mongoose.model("User", UserSchema);
-module.exports=User;
+export default User

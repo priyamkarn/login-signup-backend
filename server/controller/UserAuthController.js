@@ -1,7 +1,10 @@
-const User = require("../models/User");
-const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken');
-exports.signup = async (req, res) => {
+// const User = require("../models/User");
+import User from "../models/User.js";
+// import bcrypt from "bcrypt"
+// const bcrypt = require("bcrypt");
+// const jwt = require('jsonwebtoken');
+import jwt from "jsonwebtoken"
+export const signup = async (req, res) => {
     const { username, email, password } = req.body;
     try {
         const existingUser = await User.findOne({ email: email });
@@ -17,7 +20,7 @@ exports.signup = async (req, res) => {
         return res.status(500).send({ message: "error signing up!" });
     }
 }
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
     const { email, password } = req.body;
     try {
         const existingUser = await User.findOne({ email: email });
@@ -51,7 +54,7 @@ exports.login = async (req, res) => {
         return res.status(500).send({ message: "Error log in!", error: error });
     }
 } 
-exports.logout = async (req, res) => {
+export const logout = async (req, res) => {
     try {
       res.clearCookie("token");
       return res.status(200).send({ message: "logged out successfully!" });

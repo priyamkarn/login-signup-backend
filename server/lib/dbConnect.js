@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const dbConnect = async () => {
     try {
         await mongoose.connect('mongodb+srv://priyamcodeforces:Altruist7@cluster0.mvsexfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
@@ -8,7 +8,7 @@ const dbConnect = async () => {
         );
         console.log("connection to mongodb");
     } catch (e) {
-        console.log("failed to connect to database");
+        console.log("failed to connect to database",e);
     }
 };
-module.exports = dbConnect;
+export default dbConnect;
