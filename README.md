@@ -30,3 +30,5 @@ This project provides backend functionality for user authentication including si
 - `POST /user/signup`: Register a new user.
 - `POST /user/login`: Authenticate and log in a user.
 - `POST /user/logout`: Log out the currently authenticated user.
+## Upcoming tech to use
+zod
