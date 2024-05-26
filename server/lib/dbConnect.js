@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const dbConnect = async () => {
     try {
-        await mongoose.connect('mongodb+srv://priyamcodeforces:Altruist7@cluster0.mvsexfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+        await mongoose.connect('your mongodburl', {
             dbName: "mongo-auth-db",
             useNewUrlParser: true
         }
