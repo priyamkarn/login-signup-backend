@@ -37,7 +37,7 @@ exports.login = async (req, res) => {
         const jwttoken = jwt.sign({
             _id: existingUser._id,
             email: existingUser.email
-        }, "@Altruist7");
+        }, "@Alt");
         res.cookie("token",jwttoken,{
             path:'/',
             httpOnly:true,
